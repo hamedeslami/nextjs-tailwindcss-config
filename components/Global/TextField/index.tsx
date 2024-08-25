@@ -35,7 +35,7 @@ export default function TextField(props: ITextField) {
         htmlFor={id}
         className={`bg-white absolute right-2 
           ${isFocused ? 'top-1' : 'top-[0.8rem]'} pr-2 pl-2 text-sm transition-all duration-200 ease-in-out
-          ${ error && 'text-red-500'}
+          ${error && 'text-red-500'}
           ${isFocused || value ? 'text-slate-500 text-xs -translate-y-3 -translate-x-1' : 'text-gray-500'}`}
       >
         {label}
@@ -43,7 +43,7 @@ export default function TextField(props: ITextField) {
 
       {error && (
         <p
-          className={`text-xs mt-1 ${
+          className={`text-xs mt-1 mb-2 ${
             error ? 'text-red-500' : 'text-gray-500'
           }`}
         >

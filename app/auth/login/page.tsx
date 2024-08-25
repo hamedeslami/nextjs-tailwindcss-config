@@ -30,7 +30,7 @@ export default function Login() {
         </p>
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <Controller
             name="mobile"
             control={control}
@@ -61,6 +61,9 @@ export default function Login() {
           <Controller
             name="password"
             control={control}
+            rules={{
+              required: "گذرواژه خود را وارد نمایید",
+            }}
             render={({ field: { onChange, value } }) => (
               <TextField
                 label="گذرواژه"
@@ -68,6 +71,7 @@ export default function Login() {
                 value={value}
                 onChange={onChange}
                 placeholder=" "
+                error={errors?.password?.message}
               />
             )}
           />
