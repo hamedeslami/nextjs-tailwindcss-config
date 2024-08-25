@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import {cookies} from "next/headers";
 
 const protectedRoutes = ['/dashboard']
-const publicRoutes = ['/login', '/signup', '/']
+const publicRoutes = ['/auth/login', '/auth/signup', '/']
 
 export default async function middleware(req: NextRequest) {
     const cookieStore = cookies();
@@ -15,7 +15,7 @@ export default async function middleware(req: NextRequest) {
 
 
     if (isProtectedRoute && !token) {
-        return NextResponse.redirect(new URL('/login', req.nextUrl))
+        return NextResponse.redirect(new URL('/auth/login', req.nextUrl))
     }
 
     if (
