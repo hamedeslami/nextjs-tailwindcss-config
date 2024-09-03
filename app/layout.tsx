@@ -5,6 +5,7 @@ import axios from "axios";
 import { setupInterceptorsTo } from "@/config/configAxios";
 import dynamic from "next/dynamic";
 import "./globals.css";
+import TopProgressBar from "@/components/Global/TopProgressBar";
 
 setupInterceptorsTo(axios);
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="fa-IR" dir="rtl">
             <body>
+                <TopProgressBar />
                 <ReduxProvider>
                     <main className={IRANSansX.className}>{children}</main>
                 </ReduxProvider>
